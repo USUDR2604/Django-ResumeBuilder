@@ -1,0 +1,379 @@
+<html>
+
+<head>
+    <title>Resume 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        background-color: cornsilk;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    
+    .Resume-Content {
+        border: 1px solid black;
+        background-color: white;
+        min-height: 500px;
+    }
+    
+    .f2-sty {
+        font-size: 17px;
+    }
+    
+    .Element-Pad {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .Sub-Element-Pad {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .mute-txt {
+        color: #808080;
+        font-size: 16px;
+    }
+    
+    .cnt {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    .img-sty {
+        width: 100%;
+        border-radius: 20px;
+        max-height: 290px;
+    }
+    
+    .top-content {
+        max-height: 340px;
+        padding: 35px 35px 25px 35px;
+    }
+    
+    .Res-Content {
+        padding: 30px 40px;
+    }
+    
+    .Name-sty {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .right-sty {
+        text-align: right;
+    }
+    
+    .Sub-Content {
+        background-color: #ff5c33;
+        padding: 18px 35px 18px 25px;
+        margin-right: -35px;
+        margin-left: -5px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    
+    .Total-Content {
+        padding: 25px 40px;
+        margin-top: -15px;
+    }
+    
+    .left-sub-cnt {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .sub-cnt {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    
+    .hf-sty {
+        font-size: 30px;
+    }
+    
+    .hfw-sty {
+        font-weight: 700;
+    }
+    
+    .f1-sty {
+        font-size: 18px;
+    }
+    
+    .f2-sty {
+        font-size: 17px;
+    }
+    
+    .fw1-sty {
+        font-weight: 650;
+    }
+    
+    .fw2-sty {
+        font-weight: 600;
+    }
+    
+    .t-sty {
+        text-align: justify;
+    }
+    
+    .hr-sty {
+        border: 2px solid #ff5c33;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
+    
+    .Heading {
+        font-size: 24px;
+        font-weight: 700;
+        color: #ff5c33;
+    }
+    
+    .Heading-Right-sty {
+        padding-right: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #ff5c33;
+    }
+    
+    .Right-content {
+        margin-right: -20px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .Prog-sty {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    
+    .Lis-sty {
+        list-style-type: none;
+    }
+    
+    .oh-sty {
+        overflow: hidden;
+    }
+</style>
+
+<body>
+    <div class="content">
+        <div class="Container">
+            <div class="Resume-Content">
+                <div class='top-content'>
+                    <div class='row'>
+                        <div class="col-3">
+                            <div class="img-content">
+                                {% for pdet in persondet %}
+                                <div class="img-sty"><img class="img-sty" width='300px' height='300px' src="{{pdet.Photo.url}}" alt='Profile-Img'></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="Sub-Content">
+                                <div class="Contact-Detail">
+                                    {% for cdet in contactdet %}
+                                    <div class="contact-sty"><span class="hf-sty hfw-sty">{{cdet.First_Name}} {{cdet.Last_Name}}</span></div>
+                                    {% endfor %}
+                                </div>
+                                <div class="Summary-cnt t-sty">
+                                    {% for sdet in Summarydet %}
+                                    <div class="Summary-Pos"><span class="f1-sty fw1-sty">Profession: </span><span class="f2-sty">{{sdet.Your_Position}}</span></div>
+                                    <div class="Summary-Content"><span class="f1-sty fw1-sty">Summary: </span><span class="f2-sty oh-sty">{{sdet.Summary}}</span></div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Total-Content">
+                    <div class="Total-detail">
+                        <div class='row'>
+                            <div class="col-3">
+                                <div class="left-sub-cnt">
+                                    <div class="Contact-det">
+                                        {% for cdet in contactdet %}
+                                        <div class="Mobile-Sty sub-cnt">
+                                            <div class="f2-sty fw2-sty">Phone No:</div>
+                                            <div class="f2-sty">{{cdet.Mobile_No}}</div>
+                                        </div>
+                                        <div class="Email-sty sub-cnt">
+                                            <div class="f2-sty fw2-sty">Email Id:</div>
+                                            <div class="f2-sty">{{cdet.Email_Id}}</div>
+                                        </div>
+                                        <div class="Address-sty">
+                                            <div class="f2-sty fw2-sty">Address:</div>
+                                            <div class="f2-sty">{{cdet.Address}}</div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="SocialMedia-cnt">
+                                        {% for smedia in SocialMediadet %}
+                                        <div class="Smedia-cnt">
+                                            <div class="f2-sty fw2-sty">{{smedia.SocialMedia_Website_Name}}:</div>
+                                            <div class="f2-sty">{{smedia.SocialMedia_Link}}</div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="Element-Pad">
+                                        <div class="Skill-cnt">
+                                            <div class="Heading">SKILLS</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class="Skill-Detail">
+                                                    {% for skdet in Skilldet %}
+                                                    <div class="sub-cnt">
+                                                        <div class='Skill-sty'><span class="f2-sty">{{skdet.Skill_Name}}</span></div>
+                                                        <div class="Prog-sty">
+                                                            <div class="progress" style="height:12px;">
+                                                                <div class="progress-bar" role="progressbar" style="width: {{skdet.Skill_Percentage}}%;" aria-valuenow="{{skdet.Skill_Percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Element-Pad">
+                                        <div class="Interest-cnt">
+                                            <div class="Heading">INTERESTS</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class="Interest-Detail">
+                                                    {% for indet in Interestdet %}
+                                                    <div class="Interest-det">
+                                                        <div class="sub-cnt">
+                                                            <li class="Int-sty f2-sty">{{indet.Interest_Names}}</li>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Element-Pad">
+                                        <div class="SoftSkill-cnt">
+                                            <div class="Heading">SOFT SKILLS</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class="SoftSkill-Detail">
+                                                    {% for ssdet in SoftSkilldet %}
+                                                    <div class="sub-cnt">
+                                                        <li class="SoftSkill-sty f2-sty">{{ssdet.Soft_Skill_Name}}</li>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="Right-content">
+                                    <div class="Element-Pad">
+                                        <div class="Experience-cnt">
+                                            <div class="Heading-Right-sty">PROFESSIONAL EXPERIENCE</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class='Experience-Detail'>
+                                                    {% for expdet in Experiencedet %}
+                                                    <div class="sub-cnt">
+                                                        <div class="Exp-Profession"><span class="f2-sty fw2-sty">Profession: </span><span class="f2-sty">{{expdet.Experience_Job_Type}}</span></div>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="Exp-sty"><span class="f2-sty fw2-sty">Job-Type: </span><span class="f2-sty">{{expdet.Experience_choice}}</span> </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="Exp-sty right-sty"><span class="f2-sty">{{expdet.Experience_Start_Date}} - {{expdet.Experience_End_Date}}</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Exp-Profession"><span class="f2-sty fw2-sty">Company Name: </span><span class="f2-sty">{{expdet.Experience_Job_Name}}</span></div>
+                                                        <div class="Exp-Profession t-sty"><span class="f2-sty fw2-sty">Job Description: </span><span class="f2-sty">{{expdet.Experience_Job_Description}}</span></div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Element-Pad">
+                                        <div class="Education-cnt">
+                                            <div class="Heading-Right-sty">EDUCATION DETAILS</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class='Education-Detail'>
+                                                    {% for edudet in Educationdet %}
+                                                    <div class="sub-cnt">
+                                                        <div class="Edu-Org"><span class="f2-sty fw2-sty">Organization Name:</span><span class="f2-sty">{{edudet.Organization_Name}}</span></div>
+                                                        <div class="Edu-Org"><span class="f2-sty fw2-sty">Field Of Study: </span><span class="f2-sty">{{edudet.Field_Of_Study}}</span></div>
+                                                        <div class="Edu-Org"><span class="f2-sty fw2-sty">Address:</span><span class="f2-sty">{{edudet.City_Name}}, {{edudet.State_Name}}, {{edudet.ZipCode}}</span></div>
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <div class="Org-Dates"><span class="f2-sty fw2-sty">Passing Year: </span><span class="f2-sty">{{edudet.Year_Passing}}</span></div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="Org-Score right-sty"><span class="f2-sty fw2-sty">Score / CGPA: </span><span class="f2-sty">{{edudet.Score}}%</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Element-Pad">
+                                        <div class="Project-cnt">
+                                            <div class="Heading-Right-sty">PROJECT DETAILS</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class='Project-Detail'>
+                                                    {% for projdet in Projectdet %}
+                                                    <div class="sub-cnt">
+                                                        <div class="Proj-Sty"><span class="f2-sty fw2-sty">Project Name: </span><span class="f2-sty">{{projdet.Project_Name}}</span></div>
+                                                        <div class="Proj-Sty"><span class="f2-sty fw2-sty">Project Position: </span><span class="f2-sty">{{projdet.Project_Position}}</span></div>
+                                                        <div class="Proj-Sty"><span class="f2-sty fw2-sty">Project URL: </span><span class="f2-sty">{{projdet.Project_Url}}</span></div>
+                                                        <div class="Proj-Sty t-sty"><span class="f2-sty fw2-sty">Project Description: </span><span class="f2-sty">{{projdet.Project_Description}}</span></div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Element-Pad">
+                                        <div class="TRAINING-cnt">
+                                            <div class="Heading-Right-sty">TRAINING DETAILS</div>
+                                            <hr class="hr-sty">
+                                            <div class="Sub-Element-Pad">
+                                                <div class='TRAINING-Detail'>
+                                                    {% for tdet in Trainingdet %}
+                                                    <div class="sub-cnt">
+                                                        <div class="row">
+                                                            <div class="col-7">
+                                                                <div class="Train-Sty"><span class="f2-sty fw2-sty">Organization Name: </span><span class="f2-sty">{{tdet.Training_Org_Name}}</span></div>
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <div class="Train-sty right-sty"><span class="f2-sty fw2-sty">Dates:</span><span class="">{{tdet.Training_startDate}} - {{tdet.Training_EndDate}}</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Train-sty"><span class="f2-sty fw2-sty">Course Name:</span><span class="f2-sty">{{tdet.Training_Course_Name}}</span></div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

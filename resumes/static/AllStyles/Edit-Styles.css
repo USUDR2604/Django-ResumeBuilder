@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+.content-sty {
+    margin: 15px 0px;
+}
+
+.Heading-sty {
+    color: orangered;
+    font-size: 35px;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.form-content {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+}
+
+.Button-Content {
+    display: inline;
+    margin: 20px;
+    width: 100%;
+}
+
+.Sub-Btn-Sty {
+    text-align: center;
+}
+
+.btn-sty {
+    min-width: 50%;
+}
+
+.btn-left {
+    float: left;
+    padding: 20px;
+    min-width: 50%;
+}
+
+.btn-right {
+    float: right;
+    padding: 20px;
+    min-width: 50%;
+}
+
+.Side-Info {
+    font-weight: 650;
+    font-size: 22px;
+}
+
+.Cont-Sty {
+    font-size: 18px;
+    text-align: justify;
+    padding: 6px 0px;
+}
+
+.Detail-Cnt {
+    margin: 10px;
+}
+
+.Form-Det {
+    padding: 16px 20px;
+    border-radius: 10px 0px 10px 0px;
+}
+
+.form-heading {
+    background-color: #ff9933;
+    color: white;
+    font-size: 26px;
+    padding: 16px 14px;
+    border-radius: 20px 20px 0px 0px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    #Form-Sty {
+        order: 2;
+    }
+    #Det-Sty {
+        order: 1;
+    }
+    #more {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #myBtn {
+        display: none;
+    }
+    #dots {
+        display: none;
+    }
+    #more {
+        display: block;
+    }
+}

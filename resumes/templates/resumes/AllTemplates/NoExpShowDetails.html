@@ -1,0 +1,696 @@
+<html>
+
+<head>
+    <title>NoExperience Show Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    .bsty {
+        width: 100%;
+    }
+    
+    .f-right {
+        float: right;
+    }
+    
+    .cols-7 {
+        width: 60%;
+    }
+    
+    .colss-1 {
+        width: 3%;
+    }
+    
+    .cc {
+        counter-increment: section;
+        content: "Section " counter(section) ": ";
+    }
+    
+    .Btn-Cnt {
+        width: 100%;
+    }
+    
+    .btn-sty {
+        width: 100%;
+    }
+    
+    .sticky-top {
+        top: 30px;
+        position: absolute;
+    }
+    
+    .cols-1 {
+        width: 7%;
+    }
+    
+    .cols-2 {
+        width: 23%;
+    }
+    
+    .icon-sty {
+        max-width: 18px;
+    }
+    
+    .del-icon-sty {
+        max-width: 20px;
+    }
+    
+    .heading-sty {
+        color: #00e600;
+        font-size: 28px;
+        font-weight: 700;
+    }
+    
+    tr {
+        background-color: #eedede;
+    }
+    
+    .Button-Content {
+        display: inline;
+        margin: 20px;
+        width: 100%;
+    }
+    
+    .Btn-Cnt-Sty {
+        min-width: 50%;
+    }
+    
+    .btn-left {
+        float: left;
+        padding: 20px;
+        min-width: 50%;
+    }
+    
+    .btn-right {
+        float: right;
+        padding: 20px;
+        min-width: 50%;
+    }
+    
+    .content-sty {
+        margin: 12px 20px;
+    }
+</style>
+
+<body>
+    {% include 'resumes/AllTemplates/navbar.html' %}
+    <div class='content-sty'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-4'>
+                    <div id="list-example" class="list-groups sticky-top">
+                        <a class="list-group-item list-group-item-action" href="#ContactDetails">Contact Details</a>
+                        <a class="list-group-item list-group-item-action" href="#PersonalDetails">Personal Details</a>
+                        <a class="list-group-item list-group-item-action" href="#SocialMediaDetails">SocialMedia Details</a>
+                        <a class="list-group-item list-group-item-action" href="#EducationDetails">Education Details</a>
+                        <a class="list-group-item list-group-item-action" href="#LanguageDetails">Language Details</a>
+                        <a class="list-group-item list-group-item-action" href="#SkillDetails">Skill Details</a>
+                        <a class="list-group-item list-group-item-action" href="#SoftSkillDetails">SoftSkill Details</a>
+                        <a class="list-group-item list-group-item-action" href="#StrengthWeaknessDetails">StrengthWeakness Details</a>
+                        <a class="list-group-item list-group-item-action" href="#HobbieDetails">Hobbie Details</a>
+                        <a class="list-group-item list-group-item-action" href="#AwardAchievementDetails">Award Achievement Details</a>
+                        <a class="list-group-item list-group-item-action" href="#ProjectDetails">Project Details</a>
+                        <a class="list-group-item list-group-item-action" href="#InterestDetails">Interest Details</a>
+                        <a class="list-group-item list-group-item-action" href="#Trainingdetails">Training Details</a>
+                        <a class="list-group-item list-group-item-action" href="#CertificationDetails">Certification Details</a>
+                        <a class="list-group-item list-group-item-action" href="#SummaryDetails">Summary Details</a>
+                    </div>
+
+                </div>
+                <div class='col-lg-8'>
+                    <!--Contact Details-->
+                    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='ContactDetails'>Contact Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="#"><button class='btn btn-primary btn-sty' disabled>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Contact Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cdet in contactdet %}
+                                <tr>
+                                    <th scope="row" class='cc'>#</th>
+                                    <td> {id: {{cdet.id}}}</id:>
+                                    </td>
+                                    <td>{{cdet.First_Name}} {{cdet.Last_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpContactDetails' cdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Personal Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='PersonalDetails'>Personal Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="#"><button class='btn btn-primary btn-sty disabled'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Personal Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pdet in persondet %}
+                                <tr>
+                                    <th scope="row" class='cc'>#</th>
+                                    <td> {id: {{pdet.id}}}</id:>
+                                    </td>
+                                    <td>{{pdet.user}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpPersonalDetails' pdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Social Media Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='SocialMediaDetails'>Social Media Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpSocialMedia' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">SocialMedia Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for smdet in SocialMediadet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{smdet.id}}}</id:>
+                                    </td>
+                                    <td>{{smdet.SocialMedia_Website_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpSocialMediaDetails' smdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Education Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='EducationDetails'>Education Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpEducation' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Education Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for edet in Educationdet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{edet.id}}}</id:>
+                                    </td>
+                                    <td>{{edet.Standard}} from {{edet.Organization_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpEducationDetails' edet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Language Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='LanguageDetails'>Language Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpLanguages' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Language Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for ldet in Languagedet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{ldet.id}}}</id:>
+                                    </td>
+                                    <td>{{ldet.Language_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpLanguageDetails' ldet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- Skill Details -->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='SkillDetails'>Skill Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpSkills' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Skill Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for skdet in Skilldet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{skdet.id}}}</id:>
+                                    </td>
+                                    <td>{{skdet.Skill_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpSkillDetails' skdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--SoftSkills-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='SoftSkillDetails'>Soft Skill Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpSoftSkills' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">SoftSkills Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for ssdet in SoftSkilldet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{ssdet.id}}}</id:>
+                                    </td>
+                                    <td>{{ssdet.SoftSkill_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpSoftSkills' ssdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Strength Weakness Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='StrengthWeaknessDetails'>Strength Weakness Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpStrengthWeakness' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Strength Weakness Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for swdet in StrengthWeakdet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{swdet.id}}}</id:>
+                                    </td>
+                                    <td>From {{swdet.user}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpStrengthWeakness' swdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Hobbie Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='HobbieDetails'>Hobbie Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpHobbies' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope='col' class="colss-1">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7">Hobbie Details</th>
+                                    <th scope='col' class="cols-1 icon">Edit</th>
+                                    <th scope='col' class="cols-1 icon">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for hdet in Hobbiedet %}
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td> {id: {{hdet.id}}}</id:>
+                                    </td>
+                                    <td>{{hdet.Hobbie}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpHobbies' hdet.id %}"><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="#"><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Activity achievements-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='AwardAchievementDetails'>Activity Achievements</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpActivityAchievements' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class=" table table-hover ">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope='col' class="colss-1 ">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7 ">ActivityAchievement Details</th>
+                                    <th scope='col' class="cols-1 icon ">Edit</th>
+                                    <th scope='col' class="cols-1 icon ">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for aadet in Awardsdet %}
+                                <tr>
+                                    <th scope="row ">#</th>
+                                    <td> {id: {{aadet.id}}}</id:>
+                                    </td>
+                                    <td>{{aadet.Achievement_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpActivityAchievements' aadet.id %} "><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="# "><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Project Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='ProjectDetails'>Project Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpProjects' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover ">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope='col' class="colss-1 ">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7 ">Project Details</th>
+                                    <th scope='col' class="cols-1 icon ">Edit</th>
+                                    <th scope='col' class="cols-1 icon ">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pdet in Projectdet %}
+                                <tr>
+                                    <th scope="row ">#</th>
+                                    <td> {id: {{pdet.id}}}</id:>
+                                    </td>
+                                    <td>{{pdet.Project_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpProjects' pdet.id %} "><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'resumes:ExpDeleteProjectDetails' pdet.id %} "><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Interest Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='InterestDetails'>Interest Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpInterests' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover ">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope='col' class="colss-1 ">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7 ">Interest Details</th>
+                                    <th scope='col' class="cols-1 icon ">Edit</th>
+                                    <th scope='col' class="cols-1 icon ">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for idet in Interestdet %}
+                                <tr>
+                                    <th scope="row ">#</th>
+                                    <td> {id: {{idet.id}}}</id:>
+                                    </td>
+                                    <td>{{idet.Interest_Names}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpInterestDetails' idet.id %} "><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'resumes:ExpDeleteInterestDetails' idet.id %} "><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Training Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='Trainingdetails'>Training Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpTrainingDetails' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover ">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope='col' class="colss-1 ">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7 ">Project Details</th>
+                                    <th scope='col' class="cols-1 icon ">Edit</th>
+                                    <th scope='col' class="cols-1 icon ">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tdet in Trainingdet %}
+                                <tr>
+                                    <th scope="row ">#</th>
+                                    <td> {id: {{tdet.id}}}</id:>
+                                    </td>
+                                    <td>{{tdet.Training_Course_Name}} in {{tdet.Training_Org_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpTrainingDetails' tdet.id %} "><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="# "><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Certification Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='CertificationDetails'>Certification Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="{% url 'resumes:AddNoExpCertifications' %}"><button class='btn btn-primary btn-sty'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+                        <table class="table table-hover ">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope='col' class="colss-1 ">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7 ">Certification Details</th>
+                                    <th scope='col' class="cols-1 icon ">Edit</th>
+                                    <th scope='col' class="cols-1 icon ">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cdet in Certifydet %}
+                                <tr>
+                                    <th scope="row ">#</th>
+                                    <td> {id: {{cdet.id}}}</id:>
+                                    </td>
+                                    <td>{{cdet.Certify_Course_Name}} form {{cdet.Certify_Org_Name}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpCertifications' cdet.id %} "><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="# "><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--Summary Details-->
+                        <div class='row'>
+                            <div class='col-8'>
+                                <div class='heading-sty' id='SummaryDetails'>Summary Details</div>
+                            </div>
+                            <div class='col-4'>
+                                <div class='Btn-Cnt'>
+                                    <a href="#"><button class='btn btn-primary btn-sty disabled'>ADD OBJECTS</button></a></div>
+                            </div>
+                        </div>
+
+                        <table class="table table-hover ">
+                            <thead class="thead-dark ">
+                                <tr>
+                                    <th scope='col' class="colss-1 ">#</th>
+                                    <th scope='col' class='cols-2'>Id</th>
+                                    <th scope='col' class="cols-7 ">Summary Details</th>
+                                    <th scope='col' class="cols-1 icon ">Edit</th>
+                                    <th scope='col' class="cols-1 icon ">Del</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sdet in Summarydet %}
+                                <tr>
+                                    <th scope="row ">#</th>
+                                    <td> {id: {{sdet.id}}}</id:>
+                                    </td>
+                                    <td>From {{sdet.user}}</td>
+                                    <td>
+                                        <a href="{% url 'resumes:Edit-NoExpSummary' sdet.id %} "><img class='icon-sty' src='\media\Icons\Edit-Icon.png'></a>
+                                    </td>
+                                    <td>
+                                        <a href="# "><img class='del-icon-sty' src='\media\Icons\Delete-Icon.png'></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class='Btn-Position'>
+                <div class='Btn-Left'><a href="{% url 'resumes:NoExp-ShowDetails' %}"><button class='btn btn-primary bsty Btn-Cnt-Sty btn-l'>REFRESH</button></a></div>
+                <div class='Btn-Right'><a href="{% url 'resumes:NoExperience-Resumes' %}"><button class='btn btn-primary bsty Btn-Cnt-Sty btn-r'>NEXT DETAILS</button></a></div>
+            </div>
+        </div>
+    </div>
+    {% include 'resumes/AllTemplates/Footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<html>
+
+<head>
+    <title>Exp Resume 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        background-color: #dddfff;
+        padding: 8px;
+        font-size: 16px;
+        font-family: arial;
+    }
+    
+    .container {
+        background-color: white;
+        min-height: 100%;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+        padding: 1.25em;
+    }
+    
+    .img-sty {
+        max-height: 235px;
+        width: 100%;
+        background-size: contain;
+        border-radius: 0.75rem;
+    }
+    
+    .Summary-Content {
+        min-height: 100%;
+        margin-right: -1.25em;
+        background-color: orangered;
+        padding: 1.25em;
+        color: white;
+    }
+    
+    .Name-Sty {
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    
+    .Pos-Detail {
+        font-size: 1.25em;
+    }
+    
+    .h-sty {
+        background-color: white;
+        margin-top: 0px;
+    }
+    /*SVG ICON SYSTEM*/
+    
+    .icon {
+        display: inline-flex;
+        align-self: center;
+    }
+    
+    .icon svg,
+    .icon img {
+        height: 1em;
+        width: 1em;
+        fill: orangered;
+    }
+    
+    .icon.baseline svg,
+    .icon img {
+        top: .125em;
+        position: relative;
+    }
+    
+    h5 {
+        margin: 3px 2px;
+        padding: 0;
+        line-height: 1;
+        font-weight: 600;
+        position: relative;
+    }
+    
+    .Sec-Sty {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    /*H Tag Sizing*/
+    
+    h5 {
+        font-size: 1.125em;
+    }
+    
+    .Cont-Sty {
+        padding: 3px 4px;
+    }
+    
+    .Cnt-sty {
+        font-size: 1em;
+        padding: 3px 2px;
+    }
+    
+    .img-logo-sty {
+        width: 1.25em;
+    }
+    
+    .img-content {
+        display: inline;
+    }
+    
+    .Nm-Sty {
+        line-height: 1px;
+        font-weight: 600;
+        font-size: 1.125em;
+    }
+    
+    .Url-Sty {
+        font-size: 0.9375em;
+        overflow-x: hidden;
+    }
+    
+    .HEAD-STY {
+        color: orangered;
+        font-weight: 700;
+        font-size: 1.5625em;
+        padding-left: 5px;
+    }
+    
+    .fr-sty {
+        float: right;
+        text-align: right;
+    }
+    
+    .Skill-Nm-Sty {
+        font-size: 1.125em;
+        font-weight: 650;
+    }
+    
+    .f-sty {
+        font-size: 1em;
+    }
+    
+    .f1-sty {
+        font-size: 17px;
+    }
+    
+    .f2-sty {
+        font-size: 1.125em;
+    }
+    
+    .f3-sty {
+        font-size: 19px;
+    }
+    
+    .fw1-sty {
+        font-weight: 600;
+    }
+    
+    .fw2-sty {
+        font-weight: 650;
+    }
+    
+    .fw3-sty {
+        font-weight: 700;
+    }
+    
+    .f11-sty {
+        font-size: 15px;
+        color: #b3b3b3;
+    }
+    
+    .RSty {
+        padding: 5px 10px;
+    }
+    
+    .fpad-sty {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    
+    .fsubhead-sty {
+        font-size: 20px;
+    }
+    
+    .fcol-sty {
+        color: orangered;
+    }
+    
+    .t-sty {
+        text-align: justify;
+    }
+    
+    .oh-sty {
+        overflow: hidden;
+    }
+</style>
+
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-3 '>
+                <div class='img-content'>
+                    {% for pdet in persondet %}
+                    <img src="{{pdet.Photo.url}}" class="img-fluid img-sty" alt="Responsive image"> {% endfor %}
+                </div>
+            </div>
+            <div class='col-9'>
+                <div class='Summary-Content'>
+                    <div class='Prof-cnt'>
+                        {% for cdet in contactdet %}
+                        <div class='Name-Sty'>{{cdet.First_Name}} {{cdet.Last_Name}}</div> {% endfor %}
+                    </div>
+                    <div class='Summary-Cnt'>
+                        {% for sdet in Summarydet %}
+                        <div class='Pos-Detail'>{{sdet.Your_Position}}</div>
+                        <div class="Summary-Detail"><span class="f-sty oh-sty t-sty">{{sdet.Summary}}</span></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='display-container'>
+            <div class='row'>
+                <div class='col-3'>
+                    <div class='display-container'>
+                        <div class='Contact-Content Sec-Sty'>
+                            {% for cdet in contactdet %}
+                            <div class='Mail-Cnt Cont-Sty'>
+                                <h5>
+                                    <div class="icon baseline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orangered" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                                  </svg>
+                                    </div>
+                                    Envelope
+                                </h5>
+                                <div class='cnt-sty'>{{cdet.Email_Id}}</div>
+                            </div>
+                            <div class='Phone-Cnt Cont-Sty'>
+                                <h5>
+                                    <div class="icon baseline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orangered" class="bi bi-phone" viewBox="0 0 16 16">
+                                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                  </svg>
+                                    </div>
+                                    Mobile Phone
+                                </h5>
+                                <div class='cnt-sty'>+91 {{cdet.Mobile_No}}</div>
+                            </div>
+                            <div class='Address-Cnt Cont-Sty'>
+                                <h5>
+                                    <div class="icon baseline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                      </svg>
+                                    </div>
+                                    Address
+                                </h5>
+                                <div class='cnt-sty'>{{cdet.Address}}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class='SocialMedia-Content Sec-Sty'>
+                            {% for smedia in SocialMediadet %}
+                            <div class='Smedia-Sty Cont-Sty'>
+                                <div class='img-content'>
+                                    <img class='img-logo-sty' src='\media\SocialMedia\SocialMediaGroup.jpg' alt='SocialMediaGroup'>
+                                    <span class='Nm-Sty'>{{smedia.SocialMedia_Website_Name}}:</span>
+                                </div>
+                                <div class='Url-Sty'>{{smedia.SocialMedia_Link}}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class='Skill-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>SKILLS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for skdet in Skilldet %}
+                            <div class='Skill-Cnt Cont-Sty'>
+                                <div class='Skill-Nm-Sty'>{{skdet.Skill_Name}}</div>
+                                <div class="progress" style="height: 15px;">
+                                    <div class="progress-bar" role="progressbar" style="width:{{skdet.Skill_Percentage}}%;" aria-valuenow=" {{skdet.Skill_Percentage}} " aria-valuemin="0 " aria-valuemax="100 "></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class='Interest-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>INTERESTS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for indet in Interestdet %}
+                            <div class='Interest-Sty f1-sty fw1-sty Cnt-sty'>{{indet.Interest_Names}}</div>
+                            {% endfor %}
+                        </div>
+                        <div class='SoftSkill-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>SOFT SKILLS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for ssdet in SoftSkilldet %}
+                            <div class='SoftSkill-Sty fpad-sty f1-sty fw1-sty'>{{ssdet.SoftSkill_Name}}</div>
+                            {% endfor %}
+                        </div>
+                        <div class='Language-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>LANGUAGES</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for ldet in Languagedet %}
+                            <div class='Lang-Sty fpad-sty f1-sty fw1-sty'>{{ldet.Language_Name}}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class='col-9'>
+                    <div class='display-container RSty'>
+                        <div class='Experience-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>EXPERIENCE DETAILS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for expdet in Experiencedet %}
+                            <div class='Exp-Cnt Cont-Sty'>
+                                <div class='Company-Work fsubhead-sty fcol-sty fw2-sty'>{{expdet.Experience_Job_Type}}</div>
+                                <div class='Company-Name f2-sty fw2-sty'>{{expdet.Experience_Job_Name}} <span class='Exp-Type f11-sty'>({{expdet.Experience_Type}})</span></div>
+                                <div class='row'>
+                                    <div class='col-6 f1-sty'>{{expdet.Experience_Start_Date}} - {{expdet.Experience_End_Date}}</div>
+                                    <div class='col-6 fr-sty f1-sty'>{{expdet.City}}, {{expdet.State}}</div>
+                                </div>
+                                <div class='Exp-Desc f1-sty t-sty'>&emsp;&emsp;&emsp;&emsp;{{expdet.Experience_Job_Description}}</div>
+                            </div>
+                            {% endfor %}
+                            <div class='Cnt'>
+                                {% for indet in Internshipdet %}
+                                <div class='In-Cnt Cont-Sty'>
+                                    <div class='Company-Work fsubhead-sty fcol-sty fw2-sty'>{{indet.Internship_Job_Type}}</div>
+                                    <div class='Company-Name f2-sty fw2-sty'>{{indet.Internship_Company_Name}} <span class='Intern-Type f11-sty'>({{indet.Internship_Type}})</span></div>
+                                    <div class='row'>
+                                        <div class='col-6 f1-sty'>{{indet.Internship_Start_Date}} - {{indet.Internship_End_Date}}</div>
+                                        <div class='col-6 fr-sty f1-sty'>{{indet.City}}, {{indet.State}}</div>
+                                    </div>
+                                    <div class='Exp-Desc f1-sty'>&emsp;&emsp;&emsp;&emsp;{{indet.Internship_Job_Description}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class='Education-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>EDUCATION DETAILS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for edudet in Educationdet %}
+                            <div class='Edu-Cnt Cont-Sty'>
+                                <div class="Edu-Org"><span class="f1-sty fcol-sty fw3-sty">{{edudet.Organization_Name}}</span> <span class='Exp-Type f11-sty'>({{edudet.Organization_Type}})</span></div>
+                                <div class="Edu-Org"><span class="f1-sty fw2-sty">Field Of Study: </span><span class="f1-sty">{{edudet.Field_Of_Study}}</span></div>
+                                <div class="Edu-Org"><span class="f1-sty fw2-sty">Address:</span><span class="f1-sty">{{edudet.City_Name}}, {{edudet.State_Name}}, {{edudet.ZipCode}}</span></div>
+                                <div class="row">
+                                    <div class='col-6'><span class="f1-sty fw2-sty">Passing Year: </span><span class="f1-sty">{{edudet.Year_Passing}}</span></div>
+                                    <div class='col-6 fr-sty'><span class="f1-sty fw2-sty">Score / CGPA: </span><span class="f1-sty">{{edudet.Score}}%</span></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class='Training-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>TRAINING DETAILS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for tdet in Trainingdet %}
+                            <div class='TCnt Cont-Sty'>
+                                <div class='Train-Org'><span class='f1-sty fcol-sty fw2-sty'>{{tdet.Training_Course_Name}}</span></div>
+                                <div class='row'>
+                                    <div class='col-6'><span class='f1-sty'>{{tdet.Training_Org_Name}}</span></div>
+                                    <div class='col-6 fr-sty'><span class='f1-sty'>{{tdet.Training_startDate}} - {{tdet.Training_EndDate}}</span></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class='Project-Content Sec-Sty'>
+                            <div Class='HEAD-STY'>PROJECT DETAILS</div>
+                            <div class="progress" style="height:2px;">
+                                <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuenow="100" aria-valuemin="0 " aria-valuemax="100 "></div>
+                            </div>
+                            {% for projdet in Projectdet %}
+                            <div class='Proj-Cnt Cont-Sty'>
+                                <div class='Proj-Org'><span class='f2-sty fw2-sty fcol-sty'>{{projdet.Project_Name}}</span> <span class='Exp-Type f11-sty'>({{projdet.Project_Position}})</span></div>
+                                <div class='Proj-Org'><span class='f1-sty fw2-sty'>Project URL: </span><span class='f1-sty'>{{projdet.Project_Url}}</span></div>
+                                <div class='Proj-Org'><span class='f1-sty fw2-sty'>Project Description: </span><span class='f1-sty'>{{projdet.Project_Description}}</span></div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

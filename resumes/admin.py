@@ -1,0 +1,20 @@
+from django.contrib import admin
+from .models import *
+# Register your models here.
+admin.site.register(ContactDetails)
+admin.site.register(PersonalDetails)
+admin.site.register(LanguageDetails)
+admin.site.register(SocialMediaLinks)
+admin.site.register(EducationDetails)
+admin.site.register(Skills)
+admin.site.register(SoftSkills)
+admin.site.register(HobbieDetails)
+admin.site.register(AchievementsOrActivities)
+admin.site.register(Interests)
+admin.site.register(ProjectDetails)
+admin.site.register(TrainingDetails)
+admin.site.register(InternshipDetails)
+admin.site.register(ExperienceDetails)
+admin.site.register(SummaryDetails)
+admin.site.register(CertificationDetails)
+admin.site.register(StrengthWeakness)

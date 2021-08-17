@@ -1,0 +1,72 @@
+{% load static %}{% load crispy_forms_tags %}
+<html>
+
+<head>
+    <title>Edit ActivityAchievemnet Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href="{% static 'AllStyles/Edit-Styles.css' %}">
+</head>
+
+<body> {% include 'resumes/AllTemplates/navbar.html' %}
+
+    <div class='content-sty'>
+        <div class="container">
+            <h1 class="Heading-sty">Edit ActivityAchievement Details</h1>
+            <div class="row">
+                <div id='Form-Sty' class='col-lg-8'>
+                    <div class='form-content sticky-top'>
+                        <div class='form-heading'>Edit ActivityAchievement Details</div>
+                        <div class='Form-Det'>
+                            <form method="post"> {% csrf_token %}
+
+                                <div class="form-group"> {{ form|crispy }}
+
+                                </div>
+                                <div class='Sub-Btn-Sty'><button type="submit" class="btn btn-primary btn-sty">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id='Det-Sty' class='col-lg-4'>
+                    <div class='Detail-Cnt sticky-top'>
+                        <div class='Side-Info'>Brief Info:</div>
+                        <div class='Detail-Sty'>
+                            <div class='Cont-Sty'>&emsp;&emsp;&emsp;&emsp;Showing your accomplishments instead of responsibilities displays not only what you have done in the previous position, but also showcases how you’ll be able to benefit the company hiring you in the
+                                future.
+                                <span id='dots'>.....</span></div>
+                            <span id='more'><div class='Cont-Sty'>&emsp;&emsp;&emsp;&emsp; Down below, you’ll find many examples on how to list achievements! Converting your job duties to personal achievements can be a mind-bender, but it will definitely boost your resume. So, without further ado, let’s get down
+                                to it.</div></span>
+                            </span><button class='btn btn-primary btn-more' id='myBtn' onclick='myFunction()'>Read More</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class='Button-Content'>
+                <div class='Btn-Left'><a href="{% url 'resumes:AddNoExpActivityAchievements' %}"><button class='btn btn-primary btn-sty btn-left'>SHOW ALL DETAILS</button></a></div>
+                <div class='Btn-Right'><a href="{% url 'resumes:NoExp-ShowDetails' %}"><button class='btn btn-primary btn-sty btn-right'>ALL DETAILS</button></a></div>
+            </div>
+        </div>
+    </div>
+    {% include 'resumes/AllTemplates/Footer.html' %}
+</body>
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
+
+</html>

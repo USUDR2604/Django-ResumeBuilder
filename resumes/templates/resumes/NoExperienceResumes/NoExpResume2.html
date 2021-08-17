@@ -1,0 +1,190 @@
+<html>
+
+<head>
+    <title>Resume 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        font-family: Times, 'Times New Roman', serif;
+    }
+    
+    .content {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .profileName-sty {
+        font-weight: 800;
+        font-size: 28px;
+    }
+    
+    .head-cont {
+        font-weight: 630;
+    }
+    
+    .head-cont-sty {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    
+    .right-sty {
+        text-align: right;
+    }
+    
+    .sub-head {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    
+    .r-lab {
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+    
+    body {
+        background-color: aquamarine;
+    }
+    
+    .resume-content {
+        background-color: aliceblue;
+        padding: 25px 40px;
+    }
+</style>
+
+<body>
+    <div class='content'>
+        <div class="container">
+            <div class='resume-content'>
+                <div class='profile-content'>
+                    {% for cdet in contactdet %}
+                    <div class='profileName-sty'>{{cdet.First_Name}} {{cdet.Last_Name}}</div>
+                    {% endfor %} {% for sdet in Summarydet %}
+                    <div class='Profile-Position head-cont-sty'>{{sdet.Your_Position}}</div>
+                    {% endfor %}
+                    <div class='row'>
+                        <div class='col-6'>
+                            {% for cdet in contactdet %}
+                            <div class='Address-sty'><span class='head-cont'>Address: </span>{{cdet.Address}}</div>
+                            <div class='Phone-sty'><span class='head-cont'>Mobile Number: </span>{{cdet.Mobile_No}}</div>
+                            <div class='Mail-sty'><span class='head-cont'>Email Id: </span>{{cdet.Email_Id}}</div>
+                            {% endfor %}
+                        </div>
+                        <div class='col-6'>
+                            {% for socialdet in SocialMediadet %}
+                            <div class='SocialMedia-Head'><span class='head-cont'>{{socialdet.SocialMedia_Website_Name}} :</span>
+                                <span class='SocialMedia-cont'>{{socialdet.SocialMedia_Link}}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class='summary-content'>
+                        {% for sdet in Summarydet %}
+                        <div class='Profile-Position'><span class='head-cont'>Summary: </span>{{sdet.Summary}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class='Education-Content'>
+                    <div class='display-container'>
+                        <div class='Train-Head sub-head'><img src='\media\Logos\EducationLogo.png' alt='Education' width='22'> EDUCATION DETAILS</div>
+                        <hr>
+                        <div class='display-container'>
+                            <div class='row'>
+                                {% for edudet in Educationdet %}
+                                <div class='col-3'>
+                                    <div class='year-sty'><span class='head-cont'>Passing Year: </span>{{edudet.Year_Passing}}</div>
+                                </div>
+                                <div class='col-9'>
+                                    <div class='org-sty'><span class='head-cont'>Organization Name:</span>{{edudet.Organization_Name}}</div>
+                                    <div class='edu_field'><span class='head-cont'>Field Of Study:</span>{{edudet.Field_Of_Study}}</div>
+                                    <div class='Score-sty'><span class='head-cont'>Score:</span> {{edudet.Score}}%</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='Skill-Content'>
+                    <div class='display-container'>
+                        <div class='Train-Head sub-head'><img src='\media\Logos\SkillLogo.png' alt='Trainings' width='22'> SKILL DETAILS</div>
+                        <hr>
+                        <div class='display-container'>
+                            <div class='row'>
+                                {% for skill in Skilldet %}
+                                <div class='col-sm-3'>
+                                    <div class='SkSty'><img src='\media\Logos\PointIcon.png' alt='Point-Icon-Sty' width='20' /> {{skill.Skill_Name}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='Training-Content'>
+                    <div class='display-container'>
+                        <div class='Train-Head sub-head'><img src='\media\Logos\TrainingLogo.png' alt='Certifications' width='22'>TRAINING DETAILS</div>
+                        <hr>
+                        <div class='display-container'>
+                            <div class='row'>
+                                {% for tdet in Trainingdet %}
+                                <div class='col-3'>
+                                    <div class='Course-sty'>{{tdet.Training_startDate}} to {{tdet.Training_EndDate}}</div>
+                                    <div class='Course-sty'>({{tdet.Training_Org_Name}} Organization)</div>
+
+                                </div>
+                                <div class='col-9'>
+                                    <div class='Training-type-sty'><span class='head-cont'>Training Type: </span>{{tdet.Training_Type}}</div>
+                                    <div class='Training-Des-sty'><span class='head-cont'>Training Description: </span>{{tdet.Training_Description}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='Project-Content'>
+                    <div class='display-container'>
+                        <div class='Train-Head sub-head'><img src='\media\Logos\ProjectLogo.png' alt='Projects' width='20'>PROJECT DETAILS</div>
+                        <hr>
+                        <div class='display-container'>
+                            <div class='row'>
+                                {% for projdet in Projectdet %}
+                                <div class='col-3'>
+                                    <div class='Training-type-sty'><span class='head-cont'>{{projdet.Project_Name}}</span></div>
+                                </div>
+                                <div class='col-9'>
+                                    <div class='Training-url-sty'><span class='head-cont'>Training URL: </span>{{projdet.Project_Url}}</div>
+                                    <div class='Training-Des-sty'><span class='head-cont'>Training Description: </span>{{projdet.Project_Description}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='Project-Content'>
+                    <div class='display-container'>
+                        <div class='Train-Head sub-head'><img src='\media\Logos\CertificationLogo.png' alt='Certifications' width='22'>CERTIFICATION DETAILS</div>
+                        <hr>
+                        <div class='display-container'>
+                            <div class='row'>
+                                {% for certdet in Certifydet %}
+                                <div class='col-3'>
+                                    <div class='Course-sty'>{{certdet.Certify_startDate}} to {{certdet.Certify_EndDate}}</div>
+                                    <div class='Course-sty'>({{certdet.Certify_Org_Name}} Organization)</div>
+                                </div>
+                                <div class='col-9'>
+                                    <div class='Training-type-sty'><span class='head-cont'>Certification-Type:</span> {{certdet.Certification_Type}}</div>
+                                    <div class='Training-url-sty'><span class='head-cont'>Certified Course: </span>{{certdet.Certify_Course_Name}}</div>
+                                    <div class='Training-Des-sty'><span class='head-cont'>Certified Description: </span>{{certdet.Certify_Description}}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

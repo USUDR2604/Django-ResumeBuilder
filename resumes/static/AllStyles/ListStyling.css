@@ -1,0 +1,83 @@
+.Vertical-Menu {
+    width: 100%;
+}
+
+.Vertical-Menu a {
+    width: 100%;
+    display: block;
+    padding: 12px 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #cdbede;
+    margin: 3px 0px;
+    text-decoration: none;
+    color: white;
+}
+
+.Vertical-Menu a:hover {
+    background-color: #ccc;
+    text-decoration: none;
+}
+
+.Vertical-Menu a.active {
+    background-color: #04AA6D;
+}
+
+.btn-sty {
+    width: 100%;
+    margin: 2px 0px;
+}
+
+@media screen and (max-width:768px) {
+    .Vertical-Menu a {
+        display: none;
+    }
+    .Vertical-Menu a.active {
+        display: block;
+    }
+    .Vertical-Menu a {
+        display: block;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    .a-sty {
+        font-size: 14px;
+    }
+}
+
+.AddBtn-Sty {
+    font-size: 18px;
+}
+
+.btn-sty {
+    min-width: 50%;
+    margin: 3px 0px;
+}
+
+.fas {
+    padding: 17px;
+    width: 80px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+@media screen and (max-width:768px) {
+    .Vertical-Menu a {
+        display: none;
+    }
+    .Vertical-Menu a.active {
+        display: block;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #Obj-Detail {
+        order: 2;
+    }
+    #Link-List-Menu {
+        order: 1;
+    }
+}

@@ -1,0 +1,246 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Add ActivityAchievement Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--BootStrap CSS or JS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- For Icons-->
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    .Left-Heading-Sty {
+        font-weight: bold;
+        font-size: 22px;
+    }
+    
+    .Detail-Sty {
+        font-weight: 500;
+        font-size: 17px;
+    }
+    
+    .Footer-Content,
+    .Content-Sty {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .Left-Cnt-Sty {
+        width: 60%;
+    }
+    
+    .Right-Cnt-Sty {
+        width: 40%;
+        float: right;
+        text-align: right;
+    }
+    
+    .Footer-sty {
+        padding: 16px 12px;
+        background-color: #a3a3c2;
+        color: white;
+    }
+    
+    .Left-Content {
+        width: 60%;
+    }
+    
+    .Middle-Content {
+        width: 15%;
+    }
+    
+    .Right-Content {
+        width: 25%;
+    }
+    
+    .Left-Content,
+    .Middle-Content,
+    .Right-Content {
+        padding: 14px 16px;
+    }
+    
+    .mhead-sty {
+        padding: 6px 8px;
+    }
+    
+    .Middle-Content a {
+        text-decoration: none;
+        display: block;
+        padding: 3px 2px;
+        color: white;
+        font-size: 20px;
+    }
+    
+    .mhead-sty {
+        font-weight: 700;
+        font-size: 25px;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .Left-Content,
+        .Middle-Content,
+        .Right-Content {
+            width: 100%;
+        }
+        .Left-Cnt-Sty {
+            width: 100%;
+            padding: 10px 12px;
+        }
+        .Right-Cnt-Sty {
+            width: 100%;
+            text-align: left;
+            padding: 10px 12px;
+        }
+    }
+    
+    .far {
+        padding: 10px;
+        font-size: 25px;
+        width: 45px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        color: white;
+        border-radius: 50%;
+    }
+    
+    .far:hover {
+        opacity: 0.7;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .fafb {
+        background: #3B5998;
+        color: white;
+    }
+    
+    .fatw {
+        background: #55ACEE;
+        color: white;
+    }
+    
+    .fag {
+        background: #dd4b39;
+        color: white;
+    }
+    
+    .falin {
+        background: #007bb5;
+        color: white;
+    }
+    
+    .faytube {
+        background: #bb0000;
+        color: white;
+    }
+    
+    .fainsta {
+        background: #125688;
+        color: white;
+    }
+    
+    .faw {
+        background: #2c4762;
+        color: white;
+    }
+    
+    .fas {
+        padding: 8px;
+        font-size: 20px;
+        width: 36px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        background-color: white;
+    }
+    
+    .fas:hover {
+        opacity: 1;
+        color: #cdcddd;
+        text-decoration: none;
+    }
+    
+    .Left-Cnt-Sty a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .Content-Sty {
+        padding: 6px 12px;
+    }
+    
+    .pp-sty {
+        font-size: 21px;
+        font-weight: 700;
+    }
+    
+    .Comp-Heading {
+        font-size: 25px;
+        margin-left: 5px;
+        font-weight: 720;
+    }
+</style>
+
+<body>
+    <footer class='Footer-sty'>
+        <div class='Footer-Content'>
+            <div class='Left-Content'>
+                <p class='Left-Heading-Sty'>ABOUT</p>
+                <p class='Detail-Sty'>We the technical team after the long discussion about the people's problem and their work to make their lives easier for freshers and experienced people out there.</p>
+                <p class='Detail-Sty'>Having faced a lot of problems ourselves while creating an professional resume, and after going through a lot of online resume creating tools, we felt the need to build a solution ourselves, free for all and easy enough for everyone out
+                    there looking to draft a good resume.</p>
+                <p class='Detail-Sty'>We also provide public shareable portfolioss to share on social sites, friends, recruiters or organisations along with a PDF download feature right there, making you free from carrying out the hard copies.</p>
+            </div>
+            <div class="Middle-Content">
+                <div class='mhead-sty'>LINKS</div>
+                <div class='Link-Contents'>
+                    <a class='ma-sty' href="#">ABOUT US</a>
+                    <a class='ma-sty' href="#">CONTACT US</a>
+                    <a class='ma-sty' href="#">FAQ</a>
+                    <a class='ma-sty' href="#">PRIVACY POLICY</a>
+                    <a class='ma-sty' href="#">CREATE RESUME</a>
+                    <a class='ma-sty' href="#">BLOGS</a>
+                </div>
+            </div>
+            <div class='Right-Content'>
+                <div class='Right-Cont d-flex flex-row'>
+                    <img src='\media\Icons\RAJRESUMESLOGO.png' width='35' height='35' />
+                    <div class='Comp-Heading'>RAJ RESUMES</div>
+                </div>
+                <a href="#" class="far fa fa-whatsapp faw"></a>
+                <a href="#" class="far fa fa-facebook fafb"></a>
+                <a href="#" class="far fa fa-twitter fatw"></a>
+                <a href="#" class="far fa fa-google fag"></a>
+                <a href="#" class="far fa fa-linkedin falin"></a>
+                <a href="#" class="far fa fa-youtube faytube"></a>
+                <a href="#" class="far fa fa-instagram fainsta"></a>
+                <hr>
+                <p class='pp-sty'>@ SOCIAL MEDIA LINKS</p>
+            </div>
+        </div>
+        <hr>
+        <div class='Content-Sty'>
+            <div class='Left-Cnt-Sty'>@Copyright © 2021 All Rights Reserved by <a href="#">RAJ RESUMES</a></div>
+            <div class='Right-Cont-Sty'>
+                <a href="#" class="fas fa fa-whatsapp"></a>
+                <a href="#" class="fas fa fa-instagram"></a>
+                <a href="#" class="fas fa fa-google"></a>
+                <a href="#" class="fas fa fa-linkedin"></a>
+                <a href="#" class="fas fa fa-youtube"></a>
+            </div>
+
+
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+{% load static %}{% load crispy_forms_tags %}
+<html>
+
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'AllStyles/ListStyling.css' %}">
+    <link rel='stylesheet' href="{% static 'AllStyles/Modal-Styling.css' %}">
+</head>
+<style>
+    .Logo-Img {
+        margin: auto;
+        max-width: 360px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .l-sty {
+        padding: 5px 10px;
+        text-align: center;
+    }
+    
+    .Logo-Icon {
+        max-width: 30px;
+        margin: 2px;
+    }
+    
+    .form-content {
+        border-radius: 20px;
+    }
+    
+    .Shape-Design {
+        border-bottom: 120px solid #555;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        height: 0;
+        max-width: 600px;
+    }
+    
+    .Logo-Detail {
+        justify-content: center;
+        margin: auto;
+    }
+    
+    .cnt {
+        padding: 10px;
+    }
+</style>
+
+<body style='background-color:#787866;'>
+    {% include 'resumes/AllTemplates/Navbar.html' %}
+    <div class='content'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-6 cnt'>
+                    <div class='Image-Content'>
+                        <img class='Logo-Img' src='\media\Icons\RAJRESUMESLOGO.png'>
+                        <div class='Shape-Design'>
+                            <div class='Logo-Detail'>
+                                <h3 class='l-sty'>RAJ RESUMES</h3>
+                                <h5 class='l-sty'>GET YOUR PERSONALIZED RESUMES</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-lg-6 cnt'>
+                    <div class='form-content'>
+                        <h2>Sign up</h2>
+                        <form method="post">
+                            {% csrf_token %} {{form|crispy}}
+                            <div class='SubmitBtn-Sty'>
+                                <button type='submit' class='btn btn-primary submit-btn'>LOGIN</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

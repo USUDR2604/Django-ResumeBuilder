@@ -1,0 +1,231 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Contact Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--BootStrap CSS or JS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- For Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'AllStyles/ListStyling.css' %}">
+    <link rel='stylesheet' href="{% static 'AllStyles/Modal-Styling.css' %}">
+</head>
+<style>
+    .content {
+        padding-bottom: 15px;
+    }
+    
+    .form-sty {
+        width: 100%;
+    }
+    
+    .form-cnt {
+        margin: auto;
+        border-radius: 10px;
+        background-color: #e6e6e6;
+    }
+    
+    .form-content {
+        background-color: #e6e6e6;
+        padding: 20px 30px;
+    }
+    
+    .form-heading {
+        background-color: #ff9933;
+        width: 100%;
+        padding: 20px 16px;
+        color: white;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    hr {
+        margin-top: -2px;
+    }
+    
+    .helptext {
+        color: #999999;
+        font-size: 14px;
+    }
+    
+    label {
+        font-weight: 650;
+    }
+</style>
+
+<body>
+    {% include 'resumes/AllTemplates/Navbar.html' %}
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div id='Obj-Detail' class="col-lg-8 col-md-7 col-sm-12">
+                    <div class="form-sty">
+                        <div class="form-cnt">
+                            <div class="form-heading">Contact Details</div>
+                            <hr>
+                            <div class='form-content'>
+                                <form action='' method="post">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="id_First_Name">First Name:</label>
+                                            <input type="text" class="form-control" name="First_Name" maxlength="100" required id="id_First_Name">
+                                            <span class="helptext">Enter your First Name</span>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="id_Last_Name">Last Name:</label>
+                                            <input class="form-control" type="text" name="Last_Name" maxlength="100" required id="id_Last_Name">
+                                            <span class="helptext">Enter your Last Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_Email_Id">Email Id:</label>
+                                        <input class='form-control' type="email" name="Email_Id" maxlength="100" required id="id_Email_Id">
+                                        <span class="helptext">Enter your Email Id</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="id_Mobile_No">Mobile No:</label>
+                                            <input class='form-control' type="text" name="Mobile_No" maxlength="10" required id="id_Mobile_No">
+                                            <span class="helptext">Enter Your Mobile No</span>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="id_Alternate_Mobile_No">Alternate Mobile No:</label>
+                                            <input type="text" class='form-control' name="Alternate_Mobile_No" maxlength="10" required id="id_Alternate_Mobile_No">
+                                            <span class="helptext">Enter Your Alternate Mobile No</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_Address">Temporary Address:</label>
+                                        <input class='form-control' type="text" name="Address" maxlength="800" required id="id_Address">
+                                        <span class="helptext">Enter your Temporary Address</span></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_Address_2">Permanent Address:</label>
+                                        <input class='form-control' type="text" name="Address_2" maxlength="800" required id="id_Address_2">
+                                        <span class="helptext">Enter your Permanent Address</span></p>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="id_City">City:</label>
+                                            <input type="text" class="form-control" name="City" maxlength="80" required id="id_City">
+                                            <span class="helptext">Enter your City Name</span>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="id_State">State:</label>
+                                            <input type="text" class="form-control" name="State" maxlength="100" required id="id_State">
+                                            <span class="helptext">Enter State Name</span>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="id_ZipCode">ZipCode:</label>
+                                            <input type="text" class='form-control' name="ZipCode" maxlength="6" required id="id_ZipCode">
+                                            <span class="helptext">ZipCode</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_Country">Country:</label>
+                                        <input type="text" class='form-control' name="Country" maxlength="50" required id="id_Country">
+                                        <span class="helptext">Enter Country Name</span>
+                                    </div>
+                                    <div class='SubmitBtn-Sty'>
+                                        <button type='submit' class='btn btn-primary submit-btn'>SUBMIT</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='Link-List-Menu' class='col-lg-4 col-md-5 col-sm-12'>
+                    <div class='row-sty'>
+                        <div class='Link-Menu'>
+                            <div class="Vertical-Menu">
+                                <a href="{% url 'resumes:NoExp-ContactDetails' %}" class='active a-sty'>Contact Details</a>
+                                <a href="{% url 'resumes:NoExp-PersonalDetails' %}" class='a-sty'>Personal Details</a>
+                                <a href="{% url 'resumes:NoExp-SocialMediaDetails' %}" class='a-sty'>SocialMedia Details</a>
+                                <a href="{% url 'resumes:NoExp-EducationDetails' %}" class='a-sty'>Education Details</a>
+                                <a href="{% url 'resumes:NoExp-LanguageDetails' %}" class='a-sty'>Language Details</a>
+                                <a href="{% url 'resumes:NoExp-SkillDetails' %}" class='a-sty'>Skill Details</a>
+                                <a href="{% url 'resumes:NoExp-SoftSkillDetails' %}" class='a-sty'>SoftSkill Details</a>
+                                <a href="{% url 'resumes:NoExp-StrengthWeakness' %}" class='a-sty'>Strength Weakness Details</a>
+                                <a href="{% url 'resumes:NoExp-HobbieDetails' %}" class='a-sty'>Hobbie Details</a>
+                                <a href="{% url 'resumes:NoExp-ActivityAchievements' %}" class='a-sty'>AwardAchievement Details</a>
+                                <a href="{% url 'resumes:NoExp-ProjectDetails' %}" class='a-sty'>Project Details</a>
+                                <a href="{% url 'resumes:NoExp-InterestDetails' %}" class='a-sty'>Interest Details</a>
+                                <a href="{% url 'resumes:NoExp-TrainingDetails' %}" class='a-sty'>Training Details</a>
+                                <a href="{% url 'resumes:NoExp-CertificationDetails' %}" class='a-sty'>Certification Details</a>
+                                <a href="{% url 'resumes:NoExp-SummaryDetails' %}" class='a-sty'>Summary Details</a>
+                            </div>
+                        </div>
+                        <div class='Button-Menu'>
+                            <div class='Op-Btn'>
+                                <button id='Open-Btn' onclick="OpenFunc()" class='btn btn-primary'><i class="fax fa fa-arrow-down"></i></button></div>
+                            <div class='Cls-Btn'>
+                                <button id='Close-Btn' onclick='CloseFunc()' class='btn btn-primary'><i class="fax fa fa-arrow-up"></i></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'resumes/AllTemplates/Footer.html' %}
+</body>
+<script>
+    function OpenFunc() {
+        var i, j;
+        var ele = document.getElementsByClassName('a-sty');
+        for (i = 0; i < ele.length; i++) {
+            ele[i].style.display = "block";
+        }
+        document.getElementById('Close-Btn').style.display = 'block';
+        document.getElementById('Open-Btn').style.display = 'none';
+    }
+
+    function CloseFunc() {
+        var i, j;
+        var clele = document.getElementsByClassName('a-sty');
+        for (i = 0; i < clele.length; i++) {
+            if (clele[i].classList.contains('active')) {
+                clele[i].style.display = 'block';
+            } else {
+                clele[i].style.display = 'none';
+            }
+        }
+        document.getElementById('Open-Btn').style.display = 'block';
+        document.getElementById('Close-Btn').style.display = 'none';
+    }
+
+    function myFunction(x) {
+        var i, j;
+        if (x.matches) {
+            var clele = document.getElementsByClassName('a-sty');
+            for (i = 0; i < clele.length; i++) {
+                clele[i].style.display = "block";
+            }
+            document.getElementById('Open-Btn').style.display = 'none';
+            document.getElementById('Close-Btn').style.display = 'none';
+        } else {
+            var clele = document.getElementsByClassName('a-sty');
+            for (i = 0; i < clele.length; i++) {
+                if (clele[i].classList.contains('active')) {
+                    clele[i].style.display = 'block';
+                } else {
+                    clele[i].style.display = 'none';
+                }
+            }
+            document.getElementById('Open-Btn').style.display = 'block';
+            document.getElementById('Close-Btn').style.display = 'none';
+        }
+    }
+    var x = window.matchMedia("(min-width: 768px)")
+    myFunction(x)
+    x.addListener(myFunction)
+</script>
+
+</html>

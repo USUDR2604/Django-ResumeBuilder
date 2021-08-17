@@ -1,0 +1,25 @@
+.content-sty {
+    margin: 15px 0px;
+}
+
+.Button-Content {
+    display: inline;
+    margin: 20px;
+    width: 100%;
+}
+
+.btn-sty {
+    min-width: 50%;
+}
+
+.btn-left {
+    float: left;
+    padding: 20px;
+    min-width: 50%;
+}
+
+.btn-right {
+    float: right;
+    padding: 20px;
+    min-width: 50%;
+}

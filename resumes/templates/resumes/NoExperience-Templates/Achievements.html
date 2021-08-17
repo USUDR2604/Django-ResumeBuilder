@@ -1,0 +1,170 @@
+{% load static %}{%load crispy_forms_tags %}
+<html>
+
+<head>
+    <title>Activity Achievements</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--BootStrap CSS or JS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- For Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'AllStyles/ListStyling.css' %}">
+    <link rel='stylesheet' href="{% static 'AllStyles/Modal-Styling.css' %}">
+</head>
+<style>
+    .content {
+        padding-bottom: 15px;
+    }
+    
+    .form-sty {
+        width: 100%;
+    }
+    
+    .form-cnt {
+        margin: auto;
+        border-radius: 10px;
+        background-color: #e6e6e6;
+    }
+    
+    .form-content {
+        background-color: #e6e6e6;
+        padding: 20px 30px;
+    }
+    
+    .form-heading {
+        background-color: #ff9933;
+        width: 100%;
+        padding: 20px 16px;
+        color: white;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    hr {
+        margin-top: -2px;
+    }
+    
+    .helptext {
+        color: #999999;
+        font-size: 14px;
+    }
+    
+    label {
+        font-weight: 650;
+    }
+</style>
+
+<body>
+    {% include 'resumes/AllTemplates/Navbar.html' %}
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div id='Obj-Detail' class="col-lg-8 col-md-7 col-sm-12">
+                    <div class="form-sty">
+                        <div class="form-cnt">
+                            <div class="form-heading">Activity Achievement Details</div>
+                            <hr>
+                            <div class="form-content">
+                                <form action="" method='post'>
+                                    {% csrf_token %}{{form|crispy}}
+                                    <div class='SubmitBtn-Sty'>
+                                        <button type='submit' class='btn btn-primary submit-btn'>SUBMIT</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='Link-List-Menu' class='col-lg-4 col-md-5 col-sm-12'>
+                    <div class='row-sty'>
+                        <div class='Link-Menu'>
+                            <div class="Vertical-Menu">
+                                <a href="{% url 'resumes:NoExp-ContactDetails' %}" class='a-sty'>Contact Details</a>
+                                <a href="{% url 'resumes:NoExp-PersonalDetails' %}" class='a-sty'>Personal Details</a>
+                                <a href="{% url 'resumes:NoExp-SocialMediaDetails' %}" class='a-sty'>SocialMedia Details</a>
+                                <a href="{% url 'resumes:NoExp-EducationDetails' %}" class='a-sty'>Education Details</a>
+                                <a href="{% url 'resumes:NoExp-LanguageDetails' %}" class='a-sty'>Language Details</a>
+                                <a href="{% url 'resumes:NoExp-SkillDetails' %}" class='a-sty'>Skill Details</a>
+                                <a href="{% url 'resumes:NoExp-SoftSkillDetails' %}" class='a-sty'>SoftSkill Details</a>
+                                <a href="{% url 'resumes:NoExp-StrengthWeakness' %}" class='a-sty'>Strength Weakness Details</a>
+                                <a href="{% url 'resumes:NoExp-HobbieDetails' %}" class='a-sty'>Hobbie Details</a>
+                                <a href="{% url 'resumes:NoExp-ActivityAchievements' %}" class='active a-sty'>AwardAchievement Details</a>
+                                <a href="{% url 'resumes:NoExp-ProjectDetails' %}" class='a-sty'>Project Details</a>
+                                <a href="{% url 'resumes:NoExp-InterestDetails' %}" class='a-sty'>Interest Details</a>
+                                <a href="{% url 'resumes:NoExp-TrainingDetails' %}" class='a-sty'>Training Details</a>
+                                <a href="{% url 'resumes:NoExp-CertificationDetails' %}" class='a-sty'>Certification Details</a>
+                                <a href="{% url 'resumes:NoExp-SummaryDetails' %}" class='a-sty'>Summary Details</a>
+                            </div>
+                        </div>
+                        <div class='Button-Menu'>
+                            <div class='Op-Btn'>
+                                <button id='Open-Btn' onclick="OpenFunc()" class='btn btn-primary'><i class="fax fa fa-arrow-down"></i></button></div>
+                            <div class='Cls-Btn'>
+                                <button id='Close-Btn' onclick='CloseFunc()' class='btn btn-primary'><i class="fax fa fa-arrow-up"></i></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'resumes/AllTemplates/Footer.html' %}
+</body>
+<script>
+    function OpenFunc() {
+        var i, j;
+        var ele = document.getElementsByClassName('a-sty');
+        for (i = 0; i < ele.length; i++) {
+            ele[i].style.display = "block";
+        }
+        document.getElementById('Close-Btn').style.display = 'block';
+        document.getElementById('Open-Btn').style.display = 'none';
+    }
+
+    function CloseFunc() {
+        var i, j;
+        var clele = document.getElementsByClassName('a-sty');
+        for (i = 0; i < clele.length; i++) {
+            if (clele[i].classList.contains('active')) {
+                clele[i].style.display = 'block';
+            } else {
+                clele[i].style.display = 'none';
+            }
+        }
+        document.getElementById('Open-Btn').style.display = 'block';
+        document.getElementById('Close-Btn').style.display = 'none';
+    }
+
+    function myFunction(x) {
+        var i, j;
+        if (x.matches) {
+            var clele = document.getElementsByClassName('a-sty');
+            for (i = 0; i < clele.length; i++) {
+                clele[i].style.display = "block";
+            }
+            document.getElementById('Open-Btn').style.display = 'none';
+            document.getElementById('Close-Btn').style.display = 'none';
+        } else {
+            var clele = document.getElementsByClassName('a-sty');
+            for (i = 0; i < clele.length; i++) {
+                if (clele[i].classList.contains('active')) {
+                    clele[i].style.display = 'block';
+                } else {
+                    clele[i].style.display = 'none';
+                }
+            }
+            document.getElementById('Open-Btn').style.display = 'block';
+            document.getElementById('Close-Btn').style.display = 'none';
+        }
+    }
+    var x = window.matchMedia("(min-width: 768px)")
+    myFunction(x)
+    x.addListener(myFunction)
+</script>
+
+</html>
